@@ -9,6 +9,9 @@ The program prints the final score after completion of the quiz or timer expirat
 
 ```
 go run cmd/main.go -file <CSV file containing problems> -time <time limit for quiz>
+```
 
 ## Expected output
+
+
 
