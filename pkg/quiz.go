@@ -3,7 +3,6 @@ package quiz
 import (
 	"bufio"
 	"encoding/csv"
-	"fmt"
 	"os"
 	"strings"
 	"time"
@@ -33,7 +32,7 @@ func ParseQuestions(fileName string) [][]string {
 func RunTimedQuiz(questions [][]string, timer int) int {
 	scanner := bufio.NewScanner(os.Stdin)
 
-	fmt.Print("Press enter to start the quiz....")
+	Green.Printf("Press enter to start the quiz....")
 	scanner.Scan()
 
 	quizTimer := time.NewTimer(time.Duration(timer) * time.Second)
@@ -45,16 +44,17 @@ func RunTimedQuiz(questions [][]string, timer int) int {
 		select {
 		// Timer triggered
 		case <-quizTimer.C:
-			fmt.Println("Time's Up!")
+			Magenta.Println("Time's Up!")
 			return totalScore
 		// Ask question
 		default:
 			if i >= len(questions) {
-				fmt.Println("Quiz Complete!")
+				Green.Println("Quiz Complete!")
 				return totalScore
 			}
 			question, correctAnswer := questions[i][0], questions[i][1]
-			fmt.Printf("%v = ", question)
+			BoldBlue.Printf("%v = ", question)
+
 			scanner.Scan()
 			// Holds the string that scanned
 			answer := scanner.Text()

@@ -2,9 +2,9 @@ package main
 
 import (
 	"flag"
-	"fmt"
 
 	quiz "github.com/abaksy/goquiz/pkg"
+	"github.com/fatih/color"
 )
 
 func main() {
@@ -20,5 +20,6 @@ func main() {
 	score := quiz.RunTimedQuiz(questions, *timeDuration)
 
 	// Print final score
-	fmt.Printf("\n\nYou scored %v out of %v!\n", score, len(questions))
+	boldGreen := quiz.Green.Add(color.Bold)
+	boldGreen.Printf("\n\nYou scored %v out of %v!\n", score, len(questions))
 }
