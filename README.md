@@ -13,4 +13,5 @@ go run cmd/main.go -file <CSV file containing problems> -time <time limit for qu
 
 ## Expected output
 
-![image](https://github.com/abaksy/goquiz/assets/50787681/d2d6e588-9856-4059-895d-33106cfe5ece)
+![image](https://github.com/abaksy/goquiz/assets/50787681/4010facd-f45f-410a-bf52-63312da29d2b)
+
